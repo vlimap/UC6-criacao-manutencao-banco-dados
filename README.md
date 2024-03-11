@@ -310,10 +310,17 @@ Esses tipos de dados oferecem funcionalidades especializadas para lidar com caso
 
 ---
 
-# Tutorial SQL Server: Comandos DDL (Data Definition Language)
+# Tutorial SQL Server: Comandos 
+
+- **DDL (Data Definition Language)**
+
+- **DML (Data Manipulation Language)**
+
+- **DCL (Data Control Language)**
 
 ## Introdução
 
+- **DDL (Data Definition Language)**
 Este tutorial aborda os comandos DDL (Data Definition Language) no SQL Server, que são utilizados para definir e modificar a estrutura de dados no banco de dados. DDL inclui comandos como `CREATE`, `ALTER`, `DROP`, entre outros, que permitem criar e alterar tabelas, índices, procedimentos armazenados e outros objetos do banco de dados. Vamos explorar cada um desses comandos com exemplos práticos.
 
 ## CREATE TABLE
