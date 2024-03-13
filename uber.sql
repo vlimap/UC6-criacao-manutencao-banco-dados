@@ -33,20 +33,15 @@ create table turma_109(
 	foreign key (cpf) references aluno(cpf)
 );
 
--- Alterando o nome da tabela
-exec sp_rename 'turma', 'turma_109';
+-- Alterar os nomes das tabelas
+exec sp_rename 'turma', 'turma_109'; 
 
--- Forma alternativa
--- Mudar no proprio SGBD 
+-- Alterar  nome dos campos ou atributos
+exec sp_rename 'aluno.nome', 'nome_aluno';
 
--- Alterar os nomes das colunas ou atributos
-exec sp_rename 'turma_109.nome','nome_aluno', 'COLUMN';
-
--- Alterar os registros, alterando o nome do aluno onde o cpf �: 12354567891
-update aluno 
-set nome ='Diego Silva'
-where cpf='12354567891';
-
-select * from aluno;
+-- Alterando registros
+update aluno
+set nome_aluno = 'Diego'
+where cpf = '12354567891';
 
 
