@@ -24,8 +24,12 @@ create table turma_130(
 	nome nvarchar(30),-- Diego, Matheus
 	cpf char(11),
 	foreign key (cpf) references aluno(cpf)
-);
-
+);                                          
+insert into turma_130(nome, cpf)
+values
+--nome       cpf
+('Diego','12354567891'),
+('Matheus','98765432132'),
 -- Criando a tabela turma_109
 create table turma_109(
 	nome nvarchar(30),-- Rodolfo, Lucas
@@ -44,4 +48,11 @@ update aluno
 set nome_aluno = 'Diego'
 where cpf = '12354567891';
 
+-- Adicionando chave pk a atributo existente
+alter table livro
+add primary key (cod_livro);
+
+-- Alterando o tipo de dados do atributo
+alter table cliente
+alter column rg varchar(6);
 
