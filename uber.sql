@@ -25,11 +25,11 @@ create table turma_130(
 	cpf char(11),
 	foreign key (cpf) references aluno(cpf)
 );                                          
-insert into turma_130(nome, cpf)
+insert into aluno(nome_aluno, cpf)
 values
---nome       cpf
-('Diego','12354567891'),
-('Matheus','98765432132'),
+--nome            cpf
+('Maria Silva','45854564595'),
+('Jose Silva','48768932127');
 -- Criando a tabela turma_109
 create table turma_109(
 	nome nvarchar(30),-- Rodolfo, Lucas
@@ -48,11 +48,44 @@ update aluno
 set nome_aluno = 'Diego'
 where cpf = '12354567891';
 
--- Adicionando chave pk a atributo existente
-alter table livro
-add primary key (cod_livro);
+-- DDL - Data Manipulation Language
+-- Comando select: buscando informações
+-- Busca todos
+select * from aluno;
 
--- Alterando o tipo de dados do atributo
-alter table cliente
-alter column rg varchar(6);
+-- Busca por atributo
+select nome_aluno from aluno; 
+
+-- Buscar por algo em especifico
+select * from aluno where cpf='12354564595';
+
+-- Buscar dados especificos usano caractere curinga
+select * from aluno where nome_aluno like 'd%';
+
+-- Buscar por sobrenome do aluno
+select * from aluno where nome_aluno like '%Silva';
+
+-- Ordenação de valores
+select * from aluno order by nome_aluno;
+
+-- Consultar todos alunos em uma tabela especifica: com nome 
+-- da tabela.
+select aluno.nome_aluno 
+from aluno
+join turma_130 on aluno.cpf = turma_130.cpf;
+
+-- Consultar todos alunos em uma tabela especifica: de forma 
+-- simplificada
+select a.nome_aluno
+from aluno a -- A tabela aluno passou a ser a
+join turma_130 t on a.cpf = t.cpf;
+
+-- Contagem de todos os valores 
+select * from aluno;
+select count(*) as Total_Alunos from aluno;
+
+-- Contagem de valores em uma coluna especifica
+select count(nome_aluno) as Total_Alunos from turma_109;
+
+
 
