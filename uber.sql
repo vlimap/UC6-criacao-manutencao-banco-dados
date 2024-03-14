@@ -48,44 +48,50 @@ update aluno
 set nome_aluno = 'Diego'
 where cpf = '12354567891';
 
--- DDL - Data Manipulation Language
--- Comando select: buscando informações
+-- DML - Data Manipulation Language
+-- Comando select: buscando informaï¿½ï¿½es
 -- Busca todos
 select * from aluno;
 
--- Busca por atributo
-select nome_aluno from aluno; 
+-- Buscar por atributo
+select nome_aluno from aluno;
 
--- Buscar por algo em especifico
-select * from aluno where cpf='12354564595';
+-- Consultar o nome de um determinado aluno
+select nome_aluno from aluno where nome_aluno = 'Diego';
 
--- Buscar dados especificos usano caractere curinga
+-- Consultar parte de um nome com caractere curinga
 select * from aluno where nome_aluno like 'd%';
 
--- Buscar por sobrenome do aluno
-select * from aluno where nome_aluno like '%Silva';
+-- Consultar o Ãºltimo nome
+select * from aluno where nome_aluno like '%silva'
 
--- Ordenação de valores
+-- Consultar o nome do meio
+select * from aluno where nome_aluno like '%silva%'
+
+-- Consultar o primeiro nome
+select * from aluno where nome_aluno like 'silva%'
+
+-- Ordenar dados em ordem crescente
 select * from aluno order by nome_aluno;
 
--- Consultar todos alunos em uma tabela especifica: com nome 
--- da tabela.
-select aluno.nome_aluno 
+-- Ordenar dados em ordem decrescente
+select * from aluno order by nome_aluno desc;
+
+-- Buscar dados cruzados(em outras tabelas)
+select aluno.nome_aluno, aluno.cpf
 from aluno
+-- Junte quem tÃ¡ na turma_109 verificando se lÃ¡ em aluno.cpf = turma_109.cpf
 join turma_130 on aluno.cpf = turma_130.cpf;
 
--- Consultar todos alunos em uma tabela especifica: de forma 
--- simplificada
+-- Buscar dados cruzados(em outras tabelas): forma simplificada
 select a.nome_aluno
-from aluno a -- A tabela aluno passou a ser a
+from aluno a
 join turma_130 t on a.cpf = t.cpf;
 
--- Contagem de todos os valores 
+-- Contagem de valores
+select count(*) as Total_alunos from aluno;
 select * from aluno;
-select count(*) as Total_Alunos from aluno;
-
--- Contagem de valores em uma coluna especifica
-select count(nome_aluno) as Total_Alunos from turma_109;
-
-
+-- Adicionando um atributo na tabela existente
+alter table passageiro 
+add idade int, peso numeric(5,2);
 
