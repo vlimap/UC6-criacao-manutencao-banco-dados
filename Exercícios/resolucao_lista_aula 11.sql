@@ -92,7 +92,8 @@ where tipo='palestra' and data < '2022';
 
 /*
 Questão 12
-Liste todos os livros de ciência que foram publicados após 2015.*/
+Liste todos os livros de ciência que foram publicados após 2015.
+*/
 select livro.titulo, livro.ano_publicacao
 from livro
 join CIENCIA on livro.numero_registro = ciencia.numero_registro
