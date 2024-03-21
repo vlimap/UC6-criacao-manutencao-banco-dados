@@ -1,5 +1,37 @@
 -- Aula 02: Tipos de Dados Numéricos Exatos no SQL Server
 
+CREATE TABLE ExemploTipos (
+    GrandeNumero BIGINT, -- BIGINT: Armazena números inteiros grandes, de -2^63 a 2^63-1.
+    ValorDecimal NUMERIC(5,2), -- NUMERIC(5,2): Armazena números decimais com precisão de 5 dígitos e 2 casas decimais.
+    Flag BIT, -- BIT: Armazena valores booleanos (0 ou 1).
+    NumeroPequeno SMALLINT, -- SMALLINT: Armazena números inteiros pequenos, de -32,768 a 32,767.
+    Preco DECIMAL(10,2), -- DECIMAL(10,2): Armazena números decimais com precisão de 10 dígitos e 2 casas decimais.
+    PrecoPequeno SMALLMONEY, -- SMALLMONEY: Armazena valores monetários de -214,748.3648 a 214,748.3647.
+    Idade INT, -- INT: Armazena números inteiros, de -2^31 a 2^31-1.
+    Quantidade TINYINT, -- TINYINT: Armazena números inteiros pequenos, de 0 a 255.
+    PrecoGrande MONEY, -- MONEY: Armazena valores monetários grandes, de -2^63 a 2^63-1.
+    NumeroFloat FLOAT, -- FLOAT: Armazena números de ponto flutuante com precisão dupla.
+    NumeroReal REAL, -- REAL: Armazena números de ponto flutuante com precisão simples.
+    Data DATE, -- DATE: Armazena apenas datas no formato AAAA-MM-DD.
+    MomentoComFuso DATETIMEOFFSET, -- DATETIMEOFFSET: Armazena data e hora com informações de fuso horário.
+    MomentoPreciso DATETIME2, -- DATETIME2: Armazena data e hora com precisão fracional e maior intervalo de datas.
+    MomentoSimples SMALLDATETIME, -- SMALLDATETIME: Armazena data e hora com precisão de minutos.
+    Momento DATETIME, -- DATETIME: Armazena data e hora com precisão de 3,33 milissegundos.
+    Hora TIME, -- TIME: Armazena apenas hora com precisão fracional.
+    TextoFixo CHAR(10), -- CHAR(10): Armazena cadeias de caracteres de tamanho fixo com 10 caracteres.
+    TextoVariavel VARCHAR(50), -- VARCHAR(50): Armazena cadeias de caracteres de tamanho variável até 50 caracteres.
+    TextoLongo TEXT, -- TEXT: Armazena cadeias de caracteres de tamanho variável até 2^31-1 caracteres.
+    TextoUnicodeFixo NCHAR(10), -- NCHAR(10): Armazena cadeias de caracteres Unicode de tamanho fixo com 10 caracteres.
+    TextoUnicodeVariavel NVARCHAR(50), -- NVARCHAR(50): Armazena cadeias de caracteres Unicode de tamanho variável até 50 caracteres.
+    TextoUnicodeLongo NTEXT, -- NTEXT: Armazena cadeias de caracteres Unicode de tamanho variável até 2^30-1 caracteres.
+    DadosFixos BINARY(10), -- BINARY(10): Armazena cadeias de bytes de tamanho fixo com 10 bytes.
+    DadosVariaveis VARBINARY(50), -- VARBINARY(50): Armazena cadeias de bytes de tamanho variável até 50 bytes.
+    DadosImagem IMAGE, -- IMAGE: Armazena cadeias de bytes de tamanho variável até 2^31-1 bytes.
+    Id ROWVERSION, -- ROWVERSION: Armazena um número sequencial exclusivo para controle de concorrência.
+    NomeGeografia GEOGRAPHY, -- GEOGRAPHY: Armazena dados espaciais geográficos, como pontos, linhas e polígonos.
+    FormaGeometria GEOMETRY -- GEOMETRY: Armazena dados espaciais 2D, como pontos, linhas e polígonos.
+);
+
 -- 1. BIGINT: Armazena números inteiros grandes, de -2^63 a 2^63-1.
 CREATE TABLE ExemploBigint (
     GrandeNumero BIGINT
