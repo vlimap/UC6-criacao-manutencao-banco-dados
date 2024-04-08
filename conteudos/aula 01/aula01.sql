@@ -12,11 +12,15 @@ USE MeuBancoDeDados;
 -- Este comando define 'MeuBancoDeDados' como o banco de dados atual para as operações subsequentes.
 
 -- 4. Criar uma nova tabela com chave primária e autoincremento
-CREATE TABLE Alunos (
-    ID INT IDENTITY(1,1) PRIMARY KEY, -- ID é a chave primária e será autoincrementada
-    Nome VARCHAR(50) NOT NULL,        -- Nome é obrigatório (não pode ser NULL)
+CREATE TABLE Alunos
+(
+    ID INT IDENTITY(1,1) PRIMARY KEY,
+    -- ID é a chave primária e será autoincrementada
+    Nome VARCHAR(50) NOT NULL,
+    -- Nome é obrigatório (não pode ser NULL)
     Idade INT,
-    Email VARCHAR(50) UNIQUE           -- Email deve ser único na tabela
+    Email VARCHAR(50) UNIQUE
+    -- Email deve ser único na tabela
 );
 -- Este comando cria uma nova tabela chamada 'Alunos' com quatro colunas: ID, Nome, Idade e Email.
 -- A coluna ID é a chave primária e possui autoincremento.
@@ -24,11 +28,15 @@ CREATE TABLE Alunos (
 -- A coluna Email deve conter valores únicos (UNIQUE).
 
 -- 5. Inserir dados na tabela
-INSERT INTO Alunos (Nome, Idade, Email) VALUES ('Maria', 20, 'maria@email.com');
+INSERT INTO Alunos
+    (Nome, Idade, Email)
+VALUES
+    ('Maria', 20, 'maria@email.com');
 -- Neste comando, não é necessário especificar um valor para ID, pois ele será gerado automaticamente.
 
 -- 6. Consultar dados da tabela
-SELECT * FROM Alunos;
+SELECT *
+FROM Alunos;
 -- Este comando seleciona e exibe todos os dados da tabela 'Alunos'.
 
 -- 7. Atualizar dados da tabela
